@@ -273,4 +273,8 @@ class Post_Notif_Widget extends WP_Widget {
 	}  
 
 } // end class
-add_action( 'widgets_init', create_function( '', 'register_widget("Post_Notif_Widget");' ) );
+
+function Post_Notif_Widget_register() {
+	register_widget( 'Post_Notif_Widget' );
+}
+add_action( 'widgets_init', 'Post_Notif_Widget_register' );
